@@ -10,22 +10,30 @@ package proyectointegrador_ricardoromero;
  * @author ricky
  */
 public class Rey extends Piezas{
+    String tipoR;
 
     public Rey() {
         super();
     }
 
-    public Rey(String tipo) {
+    public Rey(String tipoR, String tipo) {
         super(tipo);
+        this.tipoR = tipoR;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getTipoR() {
+        return tipoR;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = "Rey";
+    public void setTipoR(String tipoR) {
+        this.tipoR = tipoR;
     }
+
+    @Override
+    public String toString() {
+        return "Rey{" + "tipoR=" + tipoR + '}';
+    }
+    
     
     
     @Override
