@@ -26,7 +26,7 @@ public class ProyectoIntegrador_RicardoRomero {
         String table2[][] = Matriz(imprimematriz(table, 0, 0));
         String Jugador1, Jugador2;
         int x, y, x2, y2;
-        int opn2;
+        
         boolean win = true;
         
         System.out.println("Que desea hacer: ");
@@ -36,12 +36,28 @@ public class ProyectoIntegrador_RicardoRomero {
 
         switch (opn) {
             case 1:
-                
+                int opn2;
                 System.out.println("Ingrese su nombre Jugador 1: ");
                 Jugador1 = sc.next();
                 System.out.println("Ingrese su nombre Jugador 2: ");
                 Jugador2 = sc.next();
-                
+                do {                    
+                    Matriz(table2);
+                    System.out.println("Turno del primer jugador(Rebeldes): " + Jugador1);
+                    
+                    System.out.println("Ingrese x: ");
+                    x = sc.nextInt();
+                    System.out.println("Ingrese y: ");
+                    y = sc.nextInt();
+                    
+                    if (table[x][y].contains("•")) {
+                        // rebeldes
+                        System.out.println("Mover x a otra posicion: ");
+                        x2 = sc.nextInt();
+                        System.out.println("Mover y a otra posicion: ");
+                        y2 = sc.nextInt();
+                    }
+                } while (win == true);
                 break;
         }
     }
