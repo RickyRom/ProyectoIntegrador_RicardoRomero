@@ -12,23 +12,35 @@ import java.util.Scanner;
  * @author ricky
  */
 public class ProyectoIntegrador_RicardoRomero {
-static Scanner sc = new Scanner (System.in);
+
+    static Scanner sc = new Scanner(System.in);
+    static Rey r = new Rey();
+    static Duques d = new Duques();
+    static Rebeldes s = new Rebeldes();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String table[][] = new String[19][19];
-        Matriz(imprimematriz(table, 0, 0));
-        Rey r = new Rey();
-        Duques d = new Duques();
-        Rebeldes s = new Rebeldes();
+        String table2[][] = Matriz(imprimematriz(table, 0, 0));
+        String Jugador1, Jugador2;
+        int x, y, x2, y2;
+        int opn2;
+        boolean win = true;
+        
         System.out.println("Que desea hacer: ");
         System.out.println("1. Jugar");
         System.out.println("2. Salir");
         int opn = sc.nextInt();
-        
+
         switch (opn) {
             case 1:
+                
+                System.out.println("Ingrese su nombre Jugador 1: ");
+                Jugador1 = sc.next();
+                System.out.println("Ingrese su nombre Jugador 2: ");
+                Jugador2 = sc.next();
                 
                 break;
         }
@@ -46,7 +58,7 @@ static Scanner sc = new Scanner (System.in);
         }
     }
 
-    public static void Matriz(String[][] x) {
+    public static String[][] Matriz(String[][] x) {
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[0].length; j++) {
                 if ((i == 0 && j == 0) || (i == 0 && j == 1) || (i == 1 && j == 0) || (i == 1 && j == 1) || (i == 0 && j == 17)
@@ -76,5 +88,6 @@ static Scanner sc = new Scanner (System.in);
             }
             System.out.println(" ");
         }
+        return x;
     }
 }
