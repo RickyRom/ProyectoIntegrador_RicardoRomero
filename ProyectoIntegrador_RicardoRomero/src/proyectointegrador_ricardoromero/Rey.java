@@ -9,7 +9,8 @@ package proyectointegrador_ricardoromero;
  *
  * @author ricky
  */
-public class Rey extends Piezas{
+public class Rey extends Piezas {
+
     String tipoR;
 
     public Rey() {
@@ -33,9 +34,7 @@ public class Rey extends Piezas{
     public String toString() {
         return "Rey{" + "tipoR=" + tipoR + '}';
     }
-    
-    
-    
+
     @Override
     public String[][] movimiento(String[][] matriz, int x, int y, int x2, int y2) {
         boolean direccion = true;
@@ -84,7 +83,6 @@ public class Rey extends Piezas{
             return matriz;
         }
 
-    
     }
-    
+
 }

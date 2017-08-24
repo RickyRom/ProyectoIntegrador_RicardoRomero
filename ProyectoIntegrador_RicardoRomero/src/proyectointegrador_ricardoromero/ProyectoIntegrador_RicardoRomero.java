@@ -5,18 +5,33 @@
  */
 package proyectointegrador_ricardoromero;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ricky
  */
 public class ProyectoIntegrador_RicardoRomero {
-
+static Scanner sc = new Scanner (System.in);
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String table[][] = new String[19][19];
         Matriz(imprimematriz(table, 0, 0));
+        Rey r = new Rey();
+        Duques d = new Duques();
+        Rebeldes s = new Rebeldes();
+        System.out.println("Que desea hacer: ");
+        System.out.println("1. Jugar");
+        System.out.println("2. Salir");
+        int opn = sc.nextInt();
+        
+        switch (opn) {
+            case 1:
+                
+                break;
+        }
     }
 
     public static String[][] imprimematriz(String matriz[][], int filas, int cols) {
