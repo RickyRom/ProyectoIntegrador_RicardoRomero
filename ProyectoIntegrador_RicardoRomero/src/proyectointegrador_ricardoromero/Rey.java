@@ -63,6 +63,7 @@ public class Rey extends Piezas {
                             return matriz;
                         } else if (matriz[x2][y2 - 1].contains("•") && matriz[x2][y2 - 2].contains("o")) {
                             matriz[x2][y2 - 1] = " ";
+                            System.out.println("Capturaste un Rebelde");
                             return matriz;
                         } else {
                             return matriz;
@@ -104,6 +105,7 @@ public class Rey extends Piezas {
                             return matriz;
                         } else if (matriz[x2][y2 - 1].contains("•") && matriz[x2][y2 - 2].contains("o")) {
                             matriz[x2][y2 - 1] = " ";
+                            System.out.println("Capturaste un Rebelde");
                             return matriz;
                         } else {
                             return matriz;

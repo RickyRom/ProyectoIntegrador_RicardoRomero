@@ -28,40 +28,25 @@ public class ProyectoIntegrador_RicardoRomero {
         int x, y, x2, y2;
         
         boolean win = true;
+        int opn = 0;
+        System.out.println("°°°°°°ALEA EVANGELII°°°°°°");
+        do {            
+            System.out.println("Elija una Opción: "
+                    + "1. Jugar"
+                    + "2. Salir");
+            switch (opn) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    System.out.println("¡GRACIAS POR JUGAR!");
+                    break;
+            }
+        } while (opn != 2);
+
         
-        System.out.println("Que desea hacer: ");
-        System.out.println("1. Jugar");
-        System.out.println("2. Salir");
-        int opn = sc.nextInt();
-
-        switch (opn) {
-            case 1:
-                int opn2;
-                System.out.println("Ingrese su nombre Jugador 1: ");
-                Jugador1 = sc.next();
-                System.out.println("Ingrese su nombre Jugador 2: ");
-                Jugador2 = sc.next();
-                do {                    
-                    Matriz(table2);
-                    System.out.println("Turno del primer jugador(Rebeldes): " + Jugador1);
-                    
-                    System.out.println("Ingrese x: ");
-                    x = sc.nextInt();
-                    System.out.println("Ingrese y: ");
-                    y = sc.nextInt();
-                    
-                    if (table[x][y].contains("•")) {
-                        // rebeldes
-                        System.out.println("Mover x a otra posicion: ");
-                        x2 = sc.nextInt();
-                        System.out.println("Mover y a otra posicion: ");
-                        y2 = sc.nextInt();
-                    }
-                } while (win == true);
-                break;
-        }
     }
-
+    
     public static String[][] imprimematriz(String matriz[][], int filas, int cols) {
         if (filas == matriz.length - 1 && cols == matriz.length - 1) {
             return matriz;
@@ -81,7 +66,10 @@ public class ProyectoIntegrador_RicardoRomero {
                         || (i == 0 && j == 18) || (i == 1 && j == 17) || (i == 1 && j == 18) || (i == 17 && j == 0) || (i == 17 && j == 1)
                         || (i == 18 && j == 0) || (i == 18 && j == 1) || (i == 17 && j == 17) || (i == 17 && j == 18) || (i == 18 && j == 18)
                         || (i == 18 && j == 17) || (i == 18 / 2 && j == 18 / 2)) {
-                    System.out.print("[x]");
+                    x[i][j] = "x";
+                }else if ((i == 18 / 2 && j == 18 /2 )) {
+                    x[i][j] = "▫";
+                    
                 } else if ((i == 0 && j == 2) || (i == 0 && j == 5) || (i == 0 && j == 16) || (i == 0 && j == 13) || (i == 2 && j == 0) || (i == 2 && j == 5) || (i == 2 && j == 18) || (i == 2 && j == 13) || (i == 5 && j == 0)
                         || (i == 16 && j == 0) || (i == 13 && j == 0) || (i == 2 && j == 18) || (i == 5 && j == 18) || (i == 16 && j == 18) || (i == 13 && j == 18) || (i == 16 && j == 5) || (i == 16 && j == 13) || (i == 18 && j == 13)
                         || (i == 18 && j == 5) || (i == 18 && j == 16) || (i == 18 && j == 2) || (i == 13 && j == 16) || (i == 13 && j == 2) || (i == 5 && j == 16) || (i == 5 && j == 2) || (i == 3 && j == 9) || (i == 3 && j == 11)
@@ -89,21 +77,28 @@ public class ProyectoIntegrador_RicardoRomero {
                         || (i == 9 && j == 3) || (i == 11 && j == 3) || (i == 12 && j == 4) || (i == 13 && j == 5)
                         || (i == 14 && j == 6) || (i == 15 && j == 7) || (i == 15 && j == 9) || (i == 15 && j == 11)
                         || (i == 14 && j == 12) || (i == 13 && j == 13) || (i == 12 && j == 14) || (i == 11 && j == 15) || (i == 9 && j == 15)) {
-                    System.out.print("[•]");
+                    x[i][j] = "•";
                     //•)
                 } else if ((i == 4 && j == 8) || (i == 4 && j == 10) || (i == 6 && j == 9) || (i == 7 && j == 8) || (i == 7 && j == 10) || (i == 8 && j == 7)
                         || (i == 8 && j == 11) || (i == 9 && j == 6) || (i == 9 && j == 12) || (i == 10 && j == 11) || (i == 10 && j == 7)
                         || (i == 11 && j == 8) || (i == 11 && j == 10) || (i == 12 && j == 9) || (i == 14 && j == 10) || (i == 14 && j == 8)
                         || (i == 8 && j == 4) || (i == 10 && j == 4) || (i == 8 && j == 14) || (i == 10 && j == 14) || (i == 8 && j == 4)
                         || (i == 9 && j == 8) || (i == 9 && j == 10) || (i == 10 && j == 9) || (i == 8 && j == 9)) {
-                    System.out.print("[o]");
+                    x[i][j] = "o";
                 } else {
                     x[i][j] = " ";
-                    System.out.print("[" + x[i][j] + "]");
                 }
             }
-            System.out.println(" ");
         }
         return x;
+    }
+    
+    public static void imprimamatriz (String [][] x) {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[0].length; j++) {
+                System.out.println("[" + x[i][j] + "]");
+            }
+            System.out.println("");
+        }
     }
 }
