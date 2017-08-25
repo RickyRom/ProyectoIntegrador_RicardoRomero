@@ -31,20 +31,67 @@ public class ProyectoIntegrador_RicardoRomero {
         int opn = 0;
         System.out.println("°°°°°°ALEA EVANGELII°°°°°°");
         do {            
-            System.out.println("Elija una Opción: "
-                    + "1. Jugar"
-                    + "2. Salir");
+            System.out.println("Elija una Opción: \n"
+                    + "1. Jugar\n"
+                    + "2. Salir\n");
+            opn = sc.nextInt();
             switch (opn) {
                 case 1:
-                    
+                    System.out.println("Jugador 1 Ingrese su nombre(Rebeldes)");
+                    Jugador1 = sc.next();
+                    System.out.println("Jugador 2 Ingrese su nombre(Duques)");
+                    Jugador2 = sc.next();
+                    do {                        
+                        imprimamatriz(table2);
+                        System.out.println("Su turno Jugador 1(Rebeldes): " + Jugador1);
+                        
+                        System.out.println("Ingrese X: ");
+                        x = sc.nextInt();
+                        System.out.println("Ingrese Y: ");
+                        y = sc.nextInt();
+                        
+                        if (table[x][y].contains("•")) {
+                            System.out.println("A donde quiere mover x?");
+                            x2 = sc.nextInt();
+                            System.out.println("A donde quiere mover y?");
+                            y2 = sc.nextInt();
+                            
+                            table2 = s.movimiento(table, x, y, x2, y2);
+                        }else{
+                            System.out.println("Está moviendo una pieza que no es de las suyas");
+                        }
+                        imprimamatriz(table2);
+                        System.out.println("Su turno Jugador 2(Duques): " + Jugador2);
+                        System.out.println("Ingrese X: ");
+                        x = sc.nextInt();
+                        System.out.println("Ingrese y: ");
+                        y = sc.nextInt();
+                        
+                        if (table[x][y].contains("o")) {
+                            System.out.println("A donde quiere mover x?");
+                            x2 = sc.nextInt();
+                            System.out.println("A donde quiere mover y?");
+                            y2 = sc.nextInt();
+                            
+                            table2 = d.movimiento(table, x, y, x2, y2);
+                        }else if (table[x][y].contains("▫")) {
+                            System.out.println("A donde quiere mover x?");
+                            x2 = sc.nextInt();
+                            System.out.println("A donde quiere mover y?");
+                            y2 =sc.nextInt();
+                            
+                            table2 = r.movimiento(table, x, y, x2, y2);
+                        }else{
+                            System.out.println("Está moviendo una pieza que no es de las suyas");
+                        }
+                    } while (win == true);
                     break;
                 case 2:
                     System.out.println("¡GRACIAS POR JUGAR!");
+                    opn = 2;
                     break;
             }
         } while (opn != 2);
-
-        
     }
     
     public static String[][] imprimematriz(String matriz[][], int filas, int cols) {
@@ -60,6 +107,7 @@ public class ProyectoIntegrador_RicardoRomero {
     }
 
     public static String[][] Matriz(String[][] x) {
+        System.out.println(" ");
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[0].length; j++) {
                 if ((i == 0 && j == 0) || (i == 0 && j == 1) || (i == 1 && j == 0) || (i == 1 && j == 1) || (i == 0 && j == 17)
@@ -96,9 +144,9 @@ public class ProyectoIntegrador_RicardoRomero {
     public static void imprimamatriz (String [][] x) {
         for (int i = 0; i < x.length; i++) {
             for (int j = 0; j < x[0].length; j++) {
-                System.out.println("[" + x[i][j] + "]");
+                System.out.print("[" + x[i][j] + "]");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
     }
 }

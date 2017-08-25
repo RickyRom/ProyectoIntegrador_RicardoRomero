@@ -58,19 +58,19 @@ public class Rebeldes extends Piezas{
                             matriz[x][y] = " ";
                             if (matriz[x2 + 1][y2].contains("o") && matriz[x2 + 2][y2].contains("•")) {
                                 matriz[x2 + 1][y2] = " ";
-                                System.out.println("Capturaste un Rebelde");
+                                System.out.println("Capturaste un Duque");
                                 return matriz;
                             } else if (matriz[x2 - 1][y2].contains("o") && matriz[x2 - 2][y2].contains("•")) {
                                 matriz[x2 - 1][y2] = " ";
-                                System.out.println("Capturaste un Rebelde");
+                                System.out.println("Capturaste un Duque");
                                 return matriz;
                             } else if (matriz[x2][y2 + 1].contains("o") && matriz[x2][y2 + 2].contains("•")) {
                                 matriz[x2][y2 + 1] = " ";
-                                System.out.println("Capturaste un Rebelde");
+                                System.out.println("Capturaste un Duque");
                                 return matriz;
                             } else if (matriz[x2][y2 - 1].contains("o") && matriz[x2][y2 - 2].contains("•")) {
                                 matriz[x2][y2 - 1] = " ";
-                                System.out.println("Capturaste un Rebelde");
+                                System.out.println("Capturaste un Duque");
                                 return matriz;
                             } else {
                                 return matriz;
