@@ -25,13 +25,9 @@ public class Rebeldes extends Piezas{
     }
 
     public void setTipoR2(String tipoR2) {
-        this.tipoR2 = tipoR2;
+        this.tipoR2 = "Rebeldes";
     }
 
-    @Override
-    public String toString() {
-        return "Rebeldes{" + "tipoR2=" + tipoR2 + '}';
-    }
     
     @Override
     public String[][] movimiento(String[][] matriz, int x, int y, int x2, int y2) {
