@@ -27,13 +27,9 @@ public class Duques extends Piezas {
     }
 
     public void setTipoD(String tipoD) {
-        this.tipoD = tipoD;
+        this.tipoD = "Duques";
     }
 
-    @Override
-    public String toString() {
-        return "Duques{" + "tipoD=" + tipoD + '}';
-    }
 
     @Override
     public String[][] movimiento(String[][] matriz, int x, int y, int x2, int y2) {
